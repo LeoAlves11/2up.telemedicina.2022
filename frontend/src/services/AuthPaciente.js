@@ -29,7 +29,7 @@ function AuthPaciente() {
 
         setToken(token);
         setPaciente(paciente);
-        navigate('/home');
+        navigate('/');
     }
 
     const logout = () => {

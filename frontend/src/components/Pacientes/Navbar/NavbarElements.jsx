@@ -6,7 +6,7 @@ import * as BiIcons from 'react-icons/bi';
 export const NavbarElements = [
     {
         titulo: 'Home',
-        link: '/home',
+        link: '/',
         icon: <AiIcons.AiOutlineHome/>,
         cName: 'nav-text',
         action: ''

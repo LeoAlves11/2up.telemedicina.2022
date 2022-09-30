@@ -8,9 +8,8 @@ import AuthPaciente from '../../../services/AuthPaciente'
 import GridLoader from 'react-spinners/GridLoader'
 import toast from 'react-hot-toast'
 
-function Login() {
+export default props => {
 
-    const APP_VERSION                   = 'v0.1.5';
     const {http, setToken}              = AuthPaciente();
     const [email, setEmail]             = useState('');
     const [senha, setSenha]             = useState('');
@@ -33,10 +32,10 @@ function Login() {
             setLoading(false);
         }).catch((error) => {
             console.log(error);
-            if(error.response.data.codigo_erro == '5004')
+            if(error.response.data.codigo_erro === '5004')
             {
                 toast.error(<span>{error.response.data.mensagem}<Link className="erroCadastro" to="/registrar">cadastrar-se?</Link></span>, {style:{background: '#e74c3c', color: '#fff'}, duration: 3500},);
-            }else if(error.response.data.codigo_erro == '5005'){
+            }else if(error.response.data.codigo_erro === '5005'){
                 toast.error(<span>{'Erro: '+ '' +error.response.data.codigo_erro+ ' - ' +error.response.data.mensagem}<Link className="erroAtivar" to="/ativar-conta">ativar agora?</Link></span>, {style:{background: '#0984e3', color: '#fff'}, duration: 3000});
                 sessionStorage.setItem('email_temporario', error.response.data.email_temporario);
                 sessionStorage.setItem('cel_temporario', error.response.data.cel_temporario);
@@ -109,7 +108,7 @@ function Login() {
                         </div>
                         <div className="row">
                             <div className="col-12 divVersaoApp">
-                                <p className="text-muted versaoApp">{APP_VERSION}</p>
+                                <p className="text-muted versaoApp">{props.app_version}</p>
                             </div>
                         </div>
                     </div>
@@ -119,4 +118,4 @@ function Login() {
     )
 }
 
-export default Login
+

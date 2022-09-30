@@ -9,9 +9,8 @@ import './Registrar.css'
 import GridLoader from 'react-spinners/GridLoader'
 import toast from 'react-hot-toast'
 
-function Registrar() {
+export default props => {
 
-    const APP_VERSION                           = 'v0.1.5';
     const navigate                              = useNavigate();
     const {http}                                = AuthPaciente();
     const [email, setEmail]                     = useState('');
@@ -167,7 +166,7 @@ function Registrar() {
                     </div>
                     <div className="row">
                         <div className="col-12 divVersaoApp">
-                            <p className="text-muted versaoApp">{APP_VERSION}</p>
+                            <p className="text-muted versaoApp">{props.app_version}</p>
                         </div>
                     </div>
                 </div>
@@ -176,5 +175,3 @@ function Registrar() {
         </>
     )
 }
-
-export default Registrar

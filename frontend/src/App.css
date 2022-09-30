@@ -14,10 +14,11 @@
 .divLoadingSpinner{
     text-align: center;
     background-color: #fff;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     width: 100%;
+    overflow: hidden;
     height: 100vh;
 }
 
@@ -32,12 +33,12 @@ body::-webkit-scrollbar {
 }
   
 body::-webkit-scrollbar-track {
-background: var(--cor-primaria);        /* color of the tracking area */
+    background: var(--cor-primaria);        /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-background-color: var(--cor-primaria);    /* color of the scroll thumb */
-border-radius: 20px;       /* roundness of the scroll thumb */
-border: 3px solid var(--cor-primaria);  /* creates padding around scroll thumb */
+    background-color: var(--cor-primaria);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--cor-primaria);  /* creates padding around scroll thumb */
 }
   

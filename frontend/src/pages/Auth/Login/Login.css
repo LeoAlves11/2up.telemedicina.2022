@@ -1,5 +1,7 @@
 .rowLoginBG{
-    background-color: var(--cor-primaria);
+    background: var(--cor-primaria); 
+    background: -webkit-linear-gradient(to right, var(--cor-primaria), #37a881); 
+    background: linear-gradient(to right, var(--cor-primaria), #37a881);   
 }
 
 .divFormLogin{

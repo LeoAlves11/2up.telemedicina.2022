@@ -1,0 +1,75 @@
+.rowLoginBG{
+    background-color: var(--cor-primaria);
+}
+
+.divFormLogin{
+    background-color: #ffffff;
+    padding: 30px 20px 10px 20px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.rowLogin{
+    padding: 0 10px;
+}
+
+.linkEsqueceuSenha{
+    color: var(--cor-primaria);
+    text-decoration: underline;
+    margin-left: 5px;
+    margin-top: 5px;
+    transition: ease-in-out 0.4s;
+}
+
+.linkEsqueceuSenha:hover{
+    color: #000;
+    transition: ease-in-out 0.4s;
+}
+
+.btnLogin{
+    width: 100%;
+    background-color: var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
+    font-weight: bold;
+    transition: 0.4s all ease;
+}
+
+.btnLogin:hover{
+    background-color: transparent !important;
+    color: var(--cor-primaria) !important;
+    border: 2px solid var(--cor-primaria) !important;
+    transition: 0.4s all ease;
+}
+
+.btnRegistrar{
+    background-color: transparent;
+    border: 2px solid var(--cor-primaria);
+    padding: 5px 20px;
+    color: var(--cor-primaria) !important;
+    width: 100%;
+    border-radius: 0.375rem;
+    transition: ease-in-out 0.4s;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btnRegistrar:hover{
+    background-color: var(--cor-primaria) !important;
+    color: #fff !important;
+    border: 2px solid var(--cor-primaria) !important;
+    transition: 0.4s all ease;
+}
+
+.divVersaoApp{
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.erroCadastro{
+    color: #ffffff;
+}
+
+.erroAtivar{
+    color: #ffffff;
+}
+

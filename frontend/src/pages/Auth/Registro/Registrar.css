@@ -1,0 +1,23 @@
+.selectRegistrar{
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+.btnVoltarLogin{
+    background-color: transparent;
+    border: 2px solid var(--cor-primaria);
+    padding: 5px 20px;
+    color: var(--cor-primaria) !important;
+    width: 100%;
+    border-radius: 10px;
+    transition: ease-in-out 0.4s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btnVoltarLogin:hover{
+    background-color: var(--cor-primaria) !important;
+    color: #fff !important;
+    border: 2px solid var(--cor-primaria) !important;
+    transition: 0.4s all ease;
+}

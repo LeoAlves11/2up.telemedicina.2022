@@ -22,7 +22,7 @@ class CreatePacientesTable extends Migration
             $table->string('email')->unique();
             $table->string('cpf')->unique();
             $table->string('celular');
-            $table->string('senha');
+            $table->string('password');
             $table->date('dt_nascimento');
             
             //Verificação de conta

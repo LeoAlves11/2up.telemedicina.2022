@@ -38,7 +38,7 @@ function AuthPaciente() {
     }
 
     const http = axios.create({
-        baseURL: "http://tseknu.com.br/api",
+        baseURL: "https://2up.com.br/telemedicina/api",
         headers:{
             "Content-type": "application/json",
             "Authorization": `Bearer ${token}`

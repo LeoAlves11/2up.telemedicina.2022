@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import NomePaciente from '../../components/Pacientes/Home/NomePaciente'
-import CompletarDados from '../../components/Pacientes/Home/CompletarDados'
+import NomePaciente from '../../../components/Pacientes/Home/NomePaciente'
+import CompletarDados from '../../../components/Pacientes/Home/CompletarDados'
 import './Home.css'
 
 export default Home => {

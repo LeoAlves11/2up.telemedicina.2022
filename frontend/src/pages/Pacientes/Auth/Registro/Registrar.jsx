@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import BGMedicos from '../../../imagens/login/Medicos.png'
-import AuthPaciente from '../../../services/AuthPaciente'
+import BGMedicos from '../../../../imagens/login/Medicos.png'
+import AuthPaciente from '../../../../services/AuthPaciente'
 import InputMask from 'react-input-mask'
 import './Registrar.css'
 import GridLoader from 'react-spinners/GridLoader'
 import toast from 'react-hot-toast'
+import Loading from '../../../../components/Geral/Loading'
 
 export default props => {
 
@@ -53,16 +54,16 @@ export default props => {
         });
     }
 
+    const goLogin = () => {
+        navigate('/')
+    }
+
 
     return (
         <>
             {
                 loading ? (
-                <div className="row">
-                    <div className="col-12 divLoadingSpinner">
-                        <GridLoader color="#32cdc4" />
-                    </div>
-                </div>
+                    <Loading />
                 )
                 :
                 (
@@ -156,9 +157,9 @@ export default props => {
                                     </Button>
                                 </div>
                                 <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 mt-3">
-                                    <Link to="/login" className="btnVoltarLogin" type="button">
+                                    <Button onClick={goLogin} className="btnVoltarLogin" type="button">
                                         Já possui uma conta? Fazer o Login
-                                    </Link>
+                                    </Button>
                                 </div>
                             </Form>
                             {/* Formulario para Registro */}

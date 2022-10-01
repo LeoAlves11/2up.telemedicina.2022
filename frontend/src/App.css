@@ -20,6 +20,8 @@
     width: 100%;
     overflow: hidden;
     height: 100vh;
+    position: relative;
+    left: 10px;
 }
 
 /* -------------------------------- Variaveis modo claro -------------------------------- */

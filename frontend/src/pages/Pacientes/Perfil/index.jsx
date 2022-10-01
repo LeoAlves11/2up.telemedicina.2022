@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
 import './Perfil.css'
 import * as BiIcons from 'react-icons/bi'
-import AuthPaciente from '../../services/AuthPaciente'
+import AuthPaciente from '../../../services/AuthPaciente'
 
 function Perfil(perfil) {
 

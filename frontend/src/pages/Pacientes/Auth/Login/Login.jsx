@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import './Login.css'
-import BGMedicos from '../../../imagens/login/Medicos.png'
-import AuthPaciente from '../../../services/AuthPaciente'
+import BGMedicos from '../../../../imagens/login/Medicos.png'
+import AuthPaciente from '../../../../services/AuthPaciente'
 import GridLoader from 'react-spinners/GridLoader'
 import toast from 'react-hot-toast'
+import Loading from '../../../../components/Geral/Loading'
 
 export default props => {
 
     const {http, setToken}              = AuthPaciente();
+    const navigate                      = useNavigate();
     const [email, setEmail]             = useState('');
     const [senha, setSenha]             = useState('');
 
@@ -49,17 +51,17 @@ export default props => {
         });
     }
 
+    const goRegistrar = () => {
+        navigate('/registrar')
+    }
+
 
     return (
         <>
             {
                 loading ? 
                 (
-                    <div className="row">
-                        <div className="col-12 divLoadingSpinner">
-                            <GridLoader color="#32cdc4" />
-                        </div>
-                    </div>
+                    <Loading />
                 )
                 :
                 (
@@ -100,9 +102,9 @@ export default props => {
                                     </Button>
                                 </div>
                                 <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
-                                    <Link to="/registrar" className="btnRegistrar" type="button">
+                                    <Button onClick={goRegistrar} className="btnRegistrar" type="button">
                                         Cadastrar-se
-                                    </Link>
+                                    </Button>
                                 </div>
                             </Form>
                         </div>

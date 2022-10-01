@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Pacientes\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -58,7 +58,7 @@ class AuthController extends Controller
                 "email_temporario" => $verificar_paciente->email,
                 "cpf_temporario" => $verificar_paciente->cpf,
                 "cel_temporario" => $verificar_paciente->celular,
-                "token_temporario" => Crypt::encrypt($verificar_paciente->cpf.$verificar_cpf->email),
+                "token_temporario" => Crypt::encrypt($verificar_paciente->cpf.$verificar_paciente->email),
             ], 422);
         }
 
@@ -145,6 +145,12 @@ class AuthController extends Controller
                         "mensagem" => "Este e-mail já está cadastrado",
                         "status" => 'Falha',
                         "codigo_erro" => '1001'
+                    ], 422);
+                }else if(Pacientes::where('cpf', $request->cpf)->first()){
+                    return response()->json([
+                        "mensagem" => "Este CPF já está cadastrado",
+                        "status" => 'Falha',
+                        "codigo_erro" => '1010'
                     ], 422);
                 }else{
 

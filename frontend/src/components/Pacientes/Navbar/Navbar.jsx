@@ -3,8 +3,8 @@ import './Navbar.css';
 // import './NavbarAlt.css';
 import { NavbarElements } from './NavbarElements';
 import { Link, Routes, Route, } from 'react-router-dom';
-import Home from '../../../pages/Home';
-import Perfil from '../../../pages/Usuario/Perfil';
+import Home from '../../../pages/Pacientes/Home/';
+import Perfil from '../../../pages/Pacientes/Perfil';
 import AuthPaciente from '../../../services/AuthPaciente';
 import Loading from '../../Geral/Loading';
 

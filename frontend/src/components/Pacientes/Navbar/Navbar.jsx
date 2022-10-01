@@ -7,6 +7,7 @@ import Home from '../../../pages/Pacientes/Home/';
 import Perfil from '../../../pages/Pacientes/Perfil';
 import AuthPaciente from '../../../services/AuthPaciente';
 import Loading from '../../Geral/Loading';
+import ConsultaInt from '../Consulta/ConsultaInst';
 
 const Navbar = () => {
 
@@ -63,6 +64,7 @@ const Navbar = () => {
                         <Routes>
                             <Route path="/" element={<Home paciente={dados_paciente}/>} />
                             <Route path="/perfil" element={<Perfil paciente={dados_paciente}/>} />
+                            <Route path="/consultar-agora" element={<ConsultaInt paciente={dados_paciente}/>} />
                         </Routes>
                     </>
                 )

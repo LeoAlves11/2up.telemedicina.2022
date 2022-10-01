@@ -37,8 +37,12 @@ function AuthPaciente() {
         navigate('/login');
     }
 
+    const prd = "https://2up.com.br/telemedicina/api"
+
+    const hmg = "http://localhost:8000/api"
+
     const http = axios.create({
-        baseURL: "https://2up.com.br/telemedicina/api",
+        baseURL: hmg,
         headers:{
             "Content-type": "application/json",
             "Authorization": `Bearer ${token}`

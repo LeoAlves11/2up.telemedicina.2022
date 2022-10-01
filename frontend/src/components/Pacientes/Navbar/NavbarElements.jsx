@@ -20,7 +20,7 @@ export const NavbarElements = [
     },
     {
         titulo: 'Consultar',
-        link: '/nova-consulta',
+        link: '/consultar-agora',
         icon: <BiIcons.BiPlusMedical/>,
         cName: 'nav-text btnConsultar',
         action: ''

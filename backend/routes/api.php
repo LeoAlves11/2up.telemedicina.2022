@@ -25,6 +25,10 @@ Route::post('registrar', 'App\Http\Controllers\Pacientes\Auth\AuthController@reg
 
 Route::group(['middleware' => 'api'], function(){
 
+//Chamada de video
+Route::post('/pusher/auth', 'App\Http\Controllers\Medicos\Auth\AuthController@Autenticar');
+
+//Pacientes Rotas Autenticadas
 Route::post('logout', 'App\Http\Controllers\Pacientes\Auth\AuthController@logout');
 Route::post('refresh', 'App\Http\Controllers\Pacientes\Auth\AuthController@refresh');
 
@@ -32,6 +36,10 @@ Route::post('refresh', 'App\Http\Controllers\Pacientes\Auth\AuthController@refre
 Route::post('paciente/get-paciente', 'App\Http\Controllers\Pacientes\PacientesController@getPaciente');
 Route::post('paciente/dados-completos/{id}', 'App\Http\Controllers\Pacientes\PacientesController@verificarDados')->name('paciente.dados-completo');
 
+
+//Medicos Rotas Autenticadas
+Route::post('medicos/get-medico', 'App\Http\Controllers\Medicos\MedicosController@getMedicos');
 });
 
-// Médicos
+// Médicos Login
+Route::post('medicos/login', 'App\Http\Controllers\Medicos\Auth\AuthController@login');

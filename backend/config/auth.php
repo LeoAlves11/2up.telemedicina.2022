@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'api',
-        'passwords' => 'pacientes',
+        'passwords' => 'usuarios',
     ],
 
     /*
@@ -38,7 +38,7 @@ return [
     'guards' => [
         'api' => [
             'driver' => 'jwt',
-            'provider' => 'pacientes',
+            'provider' => 'usuarios',
         ],
     ],
 
@@ -60,9 +60,9 @@ return [
     */
 
     'providers' => [
-        'pacientes' => [
+        'usuarios' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Pacientes::class,
+            'model' => App\Models\Usuarios::class,
         ],
 
         // 'users' => [
@@ -87,8 +87,8 @@ return [
     */
 
     'passwords' => [
-        'pacientes' => [
-            'provider' => 'pacientes',
+        'usuarios' => [
+            'provider' => 'usuarios',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

@@ -3,28 +3,28 @@ import './Navbar.css';
 // import './NavbarAlt.css';
 import { NavbarElements } from './NavbarElements';
 import { Link, Routes, Route, } from 'react-router-dom';
-import Home from '../../../pages/Pacientes/Home/';
-import Perfil from '../../../pages/Pacientes/Perfil';
-import AuthPaciente from '../../../services/AuthPaciente';
+import Home from '../../../pages/Medicos/Home';
+import Perfil from '../../../pages/Medicos/Perfil';
+import AuthMedicos from '../../../services/AuthMedicos';
 import Loading from '../../Geral/Loading';
 import Consultar from '../../Geral/Consulta/Consultar';
 
-const Navbar = () => {
+const NavbarMedico = () => {
 
-    const {http} = AuthPaciente();
+    const {http} = AuthMedicos();
 
-    const [dados_paciente, setDadosPaciente]    = useState('');
+    const [dados_medico, setDadosMedico]        = useState('');
 
     const [loading, setLoading]                 = useState(false);
 
     useEffect(() => {
-        fetchDadosPaciente();
+        fetchDadosMedico();
     }, []);
 
-    const fetchDadosPaciente = () => {
+    const fetchDadosMedico = () => {
         setLoading(true);
-        http.post('/paciente/get-paciente').then((response) => {
-            setDadosPaciente(response.data);
+        http.post('/medicos/get-medico').then((response) => {
+            setDadosMedico(response.data);
             setLoading(false);
         });
     }
@@ -48,7 +48,7 @@ const Navbar = () => {
                                             {NavbarElements.map((item, index) => {
                                                 return(
                                                     <li key={index} className={item.cName}>
-                                                        <Link to={item.link} onClick={fetchDadosPaciente}>
+                                                        <Link to={item.link} onClick={fetchDadosMedico}>
                                                             <span className="iconeSpan">{item.icon}</span>
                                                             <span className="nav-titulo">{item.titulo}</span>
                                                         </Link>
@@ -62,9 +62,9 @@ const Navbar = () => {
                         </div>
 
                         <Routes>
-                            <Route path="/" element={<Home paciente={dados_paciente}/>} />
-                            <Route path="/perfil" element={<Perfil paciente={dados_paciente}/>} />
-                            <Route path="/consultar-agora" element={<Consultar usuario={dados_paciente}/>} />
+                            <Route path="/medicos/" element={<Home medico={dados_medico}/>} />
+                            <Route path="/medicos/perfil" element={<Perfil medico={dados_medico}/>} />
+                            <Route path="/medicos/consultar-agora" element={<Consultar usuario={dados_medico}/>} />
                         </Routes>
                     </>
                 )
@@ -74,5 +74,5 @@ const Navbar = () => {
         )
 }
 
-export default Navbar
+export default NavbarMedico
 

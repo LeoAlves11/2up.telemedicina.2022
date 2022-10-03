@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Pacientes extends Authenticatable implements JWTSubject
+class Usuarios extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
@@ -21,6 +21,7 @@ class Pacientes extends Authenticatable implements JWTSubject
      */
     protected $fillable = [
         'nome',
+        'sobrenome',
         'cpf',
         'email',
         'password',

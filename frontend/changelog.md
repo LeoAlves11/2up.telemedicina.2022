@@ -2,15 +2,19 @@
 
 ## Adicionado:
 
-- 
+- Login de médicos
+- Adicionado página de chamada de vídeo instantânea
+- Consultas de vídeo v1
+- Mudança de tipo de autenticação ( Usuarios gerais )
+- Organizado views por pastas ( Médicos / Pacientes )
 
 ## Correção de Bugs / Alterações:
 
-- 
+- Correção de login inválido da versão (v0.1.8)
 
 ## Removido:
 
-- 
+- Removido autenticações por tipo de tabela no banco (pacientes e medicos)
 
 / ############### v0.1.8 ############### /
 

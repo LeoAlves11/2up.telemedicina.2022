@@ -1,21 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\Pacientes\Auth;
+namespace App\Http\Controllers\Medicos\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+
+//Import Models
+use App\Models\Usuarios;
+
+//Imports Uteis
+use \Pusher\Pusher;
 use Hash;
 use Crypt;
-
-//Models
-use App\Models\Usuarios;
 
 class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'registrar']]);
+        $this->middleware('auth:api', ['except' => ['login', 'registrar', 'Autenticar']]);
     }
 
     //Login via JWT
@@ -28,7 +30,7 @@ class AuthController extends Controller
             return response()->json([
                 "mensagem" => "Você precisa inserir um e-mail válido.",
                 "status" => 'Falha',
-                "codigo_erro" => '5002'
+                "codigo_erro" => '7001'
             ], 401);
         }
         
@@ -36,53 +38,62 @@ class AuthController extends Controller
             return response()->json([
                 "mensagem" => "Você precisa inserir a sua senha.",
                 "status" => 'Falha',
-                "codigo_erro" => '5003'
+                "codigo_erro" => '7002'
             ], 401);
         }
 
-        $verificar_paciente = Usuarios::where('email', $email)->first();
+        $verificar_medico = Usuarios::where('email', $email)->first();
 
-        if(!$verificar_paciente){
+        if(!$verificar_medico){
             return response()->json([
                 "mensagem" => "Não encontramos esse e-mail em nosso sistema, deseja ",
                 "status" => 'Falha',
-                "codigo_erro" => '5004'
+                "codigo_erro" => '7003'
             ], 422);
         }
 
-        if($verificar_paciente->conta_ativa == 0){
+        if($verificar_medico->conta_ativa == 0){
             return response()->json([
                 "mensagem" => "Parece que sua conta está desativada, deseja ",
                 "status" => 'Falha',
-                "codigo_erro" => '5005',
-                "email_temporario" => $verificar_paciente->email,
-                "cpf_temporario" => $verificar_paciente->cpf,
-                "cel_temporario" => $verificar_paciente->celular,
-                "token_temporario" => Crypt::encrypt($verificar_paciente->cpf.$verificar_paciente->email),
+                "codigo_erro" => '7004',
+                "email_temporario" => $verificar_medico->email,
+                "cpf_temporario" => $verificar_medico->crm_crn,
+                "cel_temporario" => $verificar_medico->celular,
+                "token_temporario" => Crypt::encrypt($verificar_medico->crm_crn.$verificar_medico->email),
             ], 422);
         }
 
-        $verificar_senha = Hash::check($senha, $verificar_paciente->password);
+        $verificar_senha = Hash::check($senha, $verificar_medico->password);
 
         if(!$verificar_senha){
             return response()->json([
                 "mensagem" => 'Senha incorreta.',
                 "status" => 'Falha',
-                "codigo_erro" => '5006',
+                "codigo_erro" => '7005',
             ], 422);
         }
 
-        $credentials = request(['email', 'password']);
+        if($verificar_medico->tipo_conta == 2)
+        {
+            $credentials = request(['email', 'password']);
 
-        if (! $token = auth()->attempt($credentials)) {
+            if (! $token = auth()->attempt($credentials)) {
+                return response()->json([
+                    "mensagem" => "E-mail ou senha incorretos.",
+                    "status" => 'Falha',
+                    "codigo_erro" => '7006'
+                ], 401);
+            }
+
+            return $this->respondWithToken($token);
+        }else{
             return response()->json([
-                "mensagem" => "CPF ou senha incorretos.",
+                "mensagem" => 'Este e-mail está vinculado a um(a) paciente, contate o suporte!',
                 "status" => 'Falha',
-                "codigo_erro" => '5001'
-            ], 401);
+                "codigo_erro" => '7007',
+            ], 422);
         }
-
-        return $this->respondWithToken($token);
     }
 
     public function registrar(Request $request)
@@ -91,10 +102,10 @@ class AuthController extends Controller
             
             if($request->confirmar_senha == $request->senha)
             {
-                if($request->cpf == null)
+                if($request->crm_crn == null)
                 {
                     return response()->json([
-                        "mensagem" => "Você precisa inserir um CPF válido.",
+                        "mensagem" => "Você precisa inserir um CRM/CRN válido.",
                         "status" => 'Falha',
                         "codigo_erro" => '1003'
                     ], 422);

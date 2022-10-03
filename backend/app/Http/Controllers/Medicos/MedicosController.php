@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Pacientes;
+namespace App\Http\Controllers\Medicos;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ use App\Models\Usuarios;
 //Imports uteis
 use Auth;
 
-class PacientesController extends Controller
+class MedicosController extends Controller
 {
     public function __construct()
     {
@@ -19,30 +19,30 @@ class PacientesController extends Controller
     }
 
     //Get Usuario via JWT
-    public function getPaciente()
+    public function getMedicos()
     {
         return response()->json(auth()->user());
     }
 
     public function verificarDados($id)
     {
-        $paciente = Usuarios::where('tipo_conta', 1)->first();
+        $medico = Usuarios::where('tipo_conta', 2)->first();
 
-        if(!$paciente)
+        if(!$medico)
         {
             return response()->json([
-                "mensagem" => "Paciente não encontrado.",
+                "mensagem" => "Médico não encontrado.",
                 "status" => 'Falha',
-                "codigo_erro" => '2101'
+                "codigo_erro" => '3001'
             ], 422);
         }
 
-        if($paciente->sexo == null)
+        if($medico->sexo == null)
         {
             return response()->json([
-                "mensagem" => "Paciente não completou os dados cadastrais.",
+                "mensagem" => "Médico não completou os dados cadastrais.",
                 "status" => 'Falha',
-                "codigo_erro" => '2102'
+                "codigo_erro" => '3002'
             ], 201);
         }
     }

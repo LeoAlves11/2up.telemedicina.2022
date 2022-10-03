@@ -1,0 +1,95 @@
+.rowLoginBG_Medico{
+    background: #fff;
+}
+
+.divFormLogin_Medico{
+    background: #0F2027; 
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    padding: 30px 20px 10px 20px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.h2Login_Medico{
+    color: #fff;
+}
+
+.pEfetueLogin_Medico{
+    color: #c7c7c7 !important
+}
+
+.form-label-medico{
+    color: #fff;
+}
+
+.divLoginMedicos .form-control{
+    background-color: transparent;
+    color: #fff !important;
+    transition: ease 0.3s all;
+}
+
+.divLoginMedicos .form-control:focus{
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--cor-primaria);
+    box-shadow: none;
+    transition: ease 0.3s all;
+    border-radius: 0px;
+    
+}
+
+.divLoginMedicos .form-control::placeholder{
+    color: #fff;
+}
+
+.versaoApp_Medico{
+    color: #fff !important;
+}
+
+.divLoginMedicos{
+    background: #0F2027; 
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+}
+
+.linkEsqueceuSenha-Medicos{
+    color: #fff;
+    text-decoration: underline;
+    margin-left: 5px;
+    margin-top: 5px;
+    transition: ease-in-out 0.4s;
+}
+
+.linkEsqueceuSenha-Medicos:hover{
+    color: #000;
+    transition: ease-in-out 0.4s;
+}
+
+.btnLogin-Medicos{
+    width: 100%;
+    background-color: var(--bg-medicos-primario);
+    border: 2px solid var(--bg-medicos-primario);
+    font-weight: bold;
+    transition: 0.4s all ease;
+}
+
+.btnLogin-Medicos:hover{
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+    transition: 0.4s all ease;
+}
+
+.divVersaoApp-Medicos{
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.erroCadastro{
+    color: #ffffff;
+}
+
+.erroAtivar{
+    color: #ffffff;
+}
+

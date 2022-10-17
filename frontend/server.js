@@ -3,9 +3,12 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 const {version, validate} = require('uuid');
+const cors = require('cors');
 
 const ACTIONS = require('./src/socket/actions');
 const PORT = process.env.PORT || 3001;
+
+app.use(cors());
 
 function getClientRooms()
 {

@@ -7,6 +7,6 @@ const options = {
     transports: ["websocket"]
 }
 
-const socket = io('https://2up-telemedicina-2022.vercel.app:3001', options);
+const socket = io('echo.websocket.org', options);
 
 export default socket;

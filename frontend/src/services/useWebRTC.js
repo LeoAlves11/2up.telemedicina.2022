@@ -72,6 +72,10 @@ export default function useWebRTC(roomID) {
         }
 
         socket.on(ACTIONS.ADD_PEER, handleNewPeer);
+
+        return () => {
+            socket.off(ACTIONS.ADD_PEER);
+        }
     });
 
     useEffect(() => {
@@ -94,6 +98,10 @@ export default function useWebRTC(roomID) {
           }
 
         socket.on(ACTIONS.SESSION_DESCRIPTION, setRemoteMedia);
+
+        return () => {
+            socket.off(ACTIONS.SESSION_DESCRIPTION);
+        }
     }, []);
 
     useEffect(() => {
@@ -119,6 +127,10 @@ export default function useWebRTC(roomID) {
 
 
         socket.on(ACTIONS.REMOVE_PEER, handleRemovePeer);
+
+        return () => {
+            socket.off(ACTIONS.REMOVE_PEER);
+        }
     }, []);
 
     useEffect(() => {

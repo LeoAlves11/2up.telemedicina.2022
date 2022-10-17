@@ -14,7 +14,7 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
 
-  const versao_app = "v0.2.0";
+  const versao_app = "v0.2.1";
 
   const {getToken} = AuthPaciente();
 

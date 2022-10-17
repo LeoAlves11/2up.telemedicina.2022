@@ -1,3 +1,19 @@
+/ ############### v0.2.1 ############### /
+
+## Adicionado:
+
+- Organização de pastas client e server para o frontend
+- Adicionado arquivo procfile ao server-side para rodar no Heroku
+
+## Correção de Bugs / Alterações:
+
+- Correção server-side do node.js
+- Alterações nos Actions de socket do Server Side
+
+## Removido:
+
+- Removido servidor do client
+
 / ############### v0.2.0 ############### /
 
 ## Adicionado:

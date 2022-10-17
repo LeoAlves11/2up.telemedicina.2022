@@ -7,6 +7,6 @@ const options = {
     transports: ["websocket"]
 }
 
-const socket = io('echo.websocket.org', options);
+const socket = io('https://telemedicina-2up.herokuapp.com/', options);
 
 export default socket;

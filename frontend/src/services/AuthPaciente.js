@@ -42,7 +42,7 @@ function AuthPaciente() {
     const hmg = "http://localhost:8000/api"
 
     const http = axios.create({
-        baseURL: prd,
+        baseURL: hmg,
         headers:{
             "Content-type": "application/json",
             "Authorization": `Bearer ${token}`

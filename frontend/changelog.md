@@ -1,3 +1,18 @@
+/ ############### v0.2.0 ############### /
+
+## Adicionado:
+
+- Chamada de vídeo v1 completa
+
+## Correção de Bugs / Alterações:
+
+- Correção de layout Login e Registro em versões Desktop
+- Correção de layout Navbar pacientes em versões Desktop
+
+## Removido:
+
+- Nada foi removido.
+
 / ############### v0.1.9 ############### /
 
 ## Adicionado:

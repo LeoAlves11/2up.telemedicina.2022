@@ -1,35 +1,53 @@
-import React from 'react'
-import MediaHandler from '../../../services/MediaHandler'
-import './Consulta.css'
-import Peer from 'simple-peer'
+import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {v4} from 'uuid';
+import AuthMedicos from '../../../services/AuthMedicos';
+import io from "socket.io-client";
+import socket from '../../../socket';
+import ACTIONS from '../../../socket/actions';
 
-export default class Consultar extends React.Component {
+export default function Consultas(props){
+    
+    const navigate = useNavigate();
+    const [rooms, updateRooms] = useState([]);
 
-    constructor(props)
-    {
-        super(props);
-       
+    const rootNode = useRef();
+
+    useEffect(() => {
+        socket.on(ACTIONS.SHARE_ROOMS, ({rooms = []} = {}) => {
+            updateRooms(rooms);
+        });
+    }, []);
+
+    function getMedicosDisponiveis() {
+
     }
 
-    
+    return(
+        <div className="container">
+            <div className="row py-5">
+                <div className="col-12 text-center">
+                    <div className="divConsultas">
+                        <small>Atualize a página para recarregar as consultas disponíveis</small>
+                        <h1>Médicos disponíveis para consulta</h1>
+                        Consultas
+                        <ul>
+                            {rooms.map(roomID => (
+                                <li key={roomID}>
+                                    {roomID}
+                                    <button onClick={() =>{
+                                        navigate(`/consultas/sala/${roomID}`);
+                                    }}>Entrar na sala</button>
+                                </li> 
+                            ))}
+                        </ul>
 
-    render(){
-        return(
-            <React.Fragment>
-                <div className="container consultaVideo">
-                    
-                    <div className="row mt-3">
-                        <div className="col-12 text-center">
-                            <div className="video-container">
-                                <video className="meu_video"></video>
-                                <video className="video_usuario" ></video>
-                            </div>
-                        </div>
+                        <button onClick={() => {
+                            navigate(`/consultas/sala/${v4()}`);
+                        }}>Nova consulta</button>
                     </div>
                 </div>
-            </React.Fragment>
-        )
-    }
-
-
+            </div>
+        </div>
+    )
 }

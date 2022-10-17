@@ -8,7 +8,9 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
-    "date-fns": "^2.29.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "freeice": "^2.2.2",
     "pusher-js": "^7.4.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
@@ -16,13 +18,18 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.4.0",
     "react-input-mask": "^2.0.4",
+    "react-router": "^6.4.1",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.4",
     "simple-peer": "^9.11.1",
+    "socket.io": "^4.5.2",
+    "socket.io-client": "^4.5.2",
+    "uuid": "^9.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "start:dev-server": "npx nodemon server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -45,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

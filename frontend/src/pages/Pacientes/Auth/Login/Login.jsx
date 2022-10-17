@@ -65,48 +65,51 @@ export default props => {
                 )
                 :
                 (
-                <div className="container">
-                        <div className="row rowLoginBG">
-                            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto text-center">
-                                <img src={BGMedicos} width="250" alt="Logo - 2UP Telemedicina"/>                        
-                            </div>
-                            <div className="col-12 divFormLogin">
-                                <h2 className="h2Login">
-                                    Fazer Login
-                                </h2>
-                                <p className="text-muted pEfetueLogin">Efetue o login para realizar consultas</p>
-                            </div>
+                <div className="container-fluid">
+                    <div className="row rowLoginBG">
+                        <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto text-center">
+                            <img src={BGMedicos} width="250" alt="Logo - 2UP Telemedicina"/>                        
                         </div>
+                        <div className="col-12 divFormLogin text-center">
+                            <h2 className="h2Login">
+                                Fazer Login
+                            </h2>
+                            <p className="text-muted pEfetueLogin">Efetue o login para realizar consultas</p>
+                        </div>
+                    </div>
+                    <div className="container">
                         <div className="row mt-3">
-                            <Form>
-                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
-                                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Label>E-mail</Form.Label>
-                                        <Form.Control value={setEmail ? email : ''} type="email" placeholder="Digite o seu e-mail" onChange={e => setEmail(e.target.value)}/>
-                                    </Form.Group>
-                                </div>
-                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
-                                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Label>Senha</Form.Label>
-                                        <Form.Control type="password" placeholder="Digite a sua senha" onChange={e => setSenha(e.target.value)}/>
-                                    </Form.Group>
-                                </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 mt-2">
-                                    <Link to="#" className="linkEsqueceuSenha">
-                                        Esqueceu sua senha?
-                                    </Link>
-                                </div>
-                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-4 mx-auto text-center">
-                                    <Button className="btnLogin" type="button" onClick={loginForm}>
-                                        Continuar
-                                    </Button>
-                                </div>
-                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
-                                    <Button onClick={goRegistrar} className="btnRegistrar" type="button">
-                                        Cadastrar-se
-                                    </Button>
-                                </div>
-                            </Form>
+                            <div className="col-12">
+                                <Form>
+                                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                            <Form.Label>E-mail</Form.Label>
+                                            <Form.Control value={setEmail ? email : ''} type="email" placeholder="Digite o seu e-mail" onChange={e => setEmail(e.target.value)}/>
+                                        </Form.Group>
+                                    </div>
+                                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
+                                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                                            <Form.Label>Senha</Form.Label>
+                                            <Form.Control type="password" placeholder="Digite a sua senha" onChange={e => setSenha(e.target.value)}/>
+                                        </Form.Group>
+                                    </div>
+                                    <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 mt-2 mx-auto text-center">
+                                        <Link to="#" className="linkEsqueceuSenha">
+                                            Esqueceu sua senha?
+                                        </Link>
+                                    </div>
+                                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-4 mx-auto text-center">
+                                        <Button className="btnLogin" type="button" onClick={loginForm}>
+                                            Continuar
+                                        </Button>
+                                    </div>
+                                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3 mx-auto">
+                                        <Button onClick={goRegistrar} className="btnRegistrar" type="button">
+                                            Cadastrar-se
+                                        </Button>
+                                    </div>
+                                </Form>
+                            </div>
                         </div>
                         <div className="row">
                             <div className="col-12 divVersaoApp">
@@ -114,6 +117,7 @@ export default props => {
                             </div>
                         </div>
                     </div>
+                </div>
                 )
             }
         </>

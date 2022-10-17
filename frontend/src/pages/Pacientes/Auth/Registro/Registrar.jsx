@@ -68,7 +68,7 @@ export default props => {
                 :
                 (
                 <div className="container-fluid">
-                    <div className="row rowLoginBG">
+                    <div className="row rowLoginBG text-center">
                         <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto text-center">
                             <img src={BGMedicos} width="250" alt="Logo - 2UP Telemedicina"/>                        
                         </div>
@@ -83,49 +83,49 @@ export default props => {
                         <div className="col-12">
                         {/* Formulario para Registro */}
                         <Form>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
                                     {/* Nome */}
                                     <Form.Group className="mb-2" controlId="formBasicNome">
                                         <Form.Label className="labelNome">Nome</Form.Label>
                                         <Form.Control value={setNome ? nome : ''} className="inputLogin" type="text" placeholder="Nome" onChange={e => setNome(e.target.value)}/>
                                     </Form.Group>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
                                     {/* Sobrenome */}
                                     <Form.Group className="mb-2" controlId="formBasicSobrenome">
                                         <Form.Label className="labelSobrenome">Sobrenome</Form.Label>
                                         <Form.Control value={setSobrenome ? sobrenome : ''} className="inputLogin" type="text" placeholder="Sobrenome" onChange={e => setSobrenome(e.target.value)}/>
                                     </Form.Group>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
                                     {/* CPF */}
                                     <Form.Group className="mb-2" controlId="formBasicCPF">
                                         <Form.Label className="labelCPF">Seu CPF</Form.Label>
                                         <Form.Control value={setCPF ? cpf : ''} className="inputLogin" as={InputMask} mask="999.999.999-99" type="text" placeholder="CPF" onChange={e => setCPF(e.target.value)}/>
                                     </Form.Group>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
                                     {/* E-mail */}
                                     <Form.Group className="mb-2" controlId="formBasicEmail">
                                         <Form.Label className="labelEmail">E-mail</Form.Label>
                                         <Form.Control value={setEmail ? email : ''} className="inputLogin" type="email" placeholder="E-mail" onChange={e => setEmail(e.target.value)}/>
                                     </Form.Group>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
                                     {/* Telefone */}
                                     <Form.Group className="mb-2" controlId="formBasicTelefone">
                                         <Form.Label className="labelTelefone">Celular</Form.Label>
                                         <Form.Control value={setCelular ? celular : ''} as={InputMask} mask="(99) 99999-9999" className="inputLogin" type="text" placeholder="Telefone" onChange={e => setCelular(e.target.value)}/>
                                     </Form.Group>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
                                     {/* Data de Nascimento */}
                                     <Form.Group className="mb-2" controlId="formBasicDtNascimento">
                                         <Form.Label className="labelDtNascimento">Data de nascimento</Form.Label>
                                         <Form.Control value={setDtNascimento ? dt_nascimento : ''} className="inputLogin" type="date" onChange={e => setDtNascimento(e.target.value)}/>
                                     </Form.Group>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
                                     {/* Sexo */}
                                     <Form.Group className="mb-2" controlId="formBasicSexo">
                                         <Form.Label className="labelSexo">Sexo</Form.Label>
@@ -137,26 +137,26 @@ export default props => {
                                         </Form.Select>
                                     </Form.Group>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
                                     {/* Senha */}
                                     <Form.Group className="mb-2" controlId="formBasicSenha">
                                         <Form.Label className="labelSenha">Senha</Form.Label>
                                         <Form.Control value={setSenha ? senha : ''} className="inputLogin" type="password" placeholder="Senha" onChange={e => setSenha(e.target.value)}/>
                                     </Form.Group>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mx-auto">
                                     {/* Confirmar Senha */}
                                     <Form.Group className="mb-2" controlId="formBasicConfirmSenha">
                                         <Form.Label className="labelSenha">Confirme sua Senha</Form.Label>
                                         <Form.Control className="inputLogin" type="password" placeholder="Confirme sua Senha" onChange={e => setConfirmarSenha(e.target.value)}/>
                                     </Form.Group>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 mt-5">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-5 mx-auto">
                                     <Button className="btnLogin" type="button" onClick={registrarForm}>
                                         Continuar
                                     </Button>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 mt-3">
+                                <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3 mx-auto">
                                     <Button onClick={goLogin} className="btnVoltarLogin" type="button">
                                         Já possui uma conta? Fazer o Login
                                     </Button>

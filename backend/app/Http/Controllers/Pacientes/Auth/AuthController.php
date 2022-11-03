@@ -157,7 +157,9 @@ class AuthController extends Controller
                     $paciente = new Usuarios;
 
                     $paciente->cpf                       = $request->cpf;
-                    $paciente->conta_ativa               = 0;
+                    $paciente->conta_ativa               = 1;
+                    $paciente->tipo_conta                = 1;
+                    $paciente->nivel_conta               = 1;
                     $paciente->password                  = Hash::make($request->senha);
                     $paciente->email                     = $request->email;
                     $paciente->nome                      = $request->nome;

@@ -27,7 +27,7 @@
     font-weight: 600;
 }
 
-.meu_video{
+video{
     width: 100%;
     /* position: absolute;
     left: 10px;
@@ -36,6 +36,7 @@
     border-radius: 10px;
     z-index: 2; */
 }
+
 
 .video_usuario{
     position: absolute;

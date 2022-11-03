@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 
 const SocketContext = createContext();
 
-const socket = io('http://localhost:3001');
+const socket = io('https://telemedicina-2up.herokuapp.com');
 
 const ContextProvider = ( { children } ) => {
     
@@ -81,7 +81,7 @@ const ContextProvider = ( { children } ) => {
     const leaveCall = () => {
 
         socket.on("callended", () =>{
-            
+
             setCallEnded(true);
             setCallAccepted(false);
 

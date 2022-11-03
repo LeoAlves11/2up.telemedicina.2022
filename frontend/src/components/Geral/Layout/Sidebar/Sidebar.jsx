@@ -22,14 +22,14 @@ export default function Sidebar() {
             notification: 3,
         },
         {
-            label: "Agendar Consulta",
-            icon: <AiOutlineCalendar />,
+            label: "Consultar Agora",
+            icon: <AiOutlineVideoCamera />,
             to: "/consultas",
             notification: 0,
         },
         {
-            label: "Consultar Agora",
-            icon: <AiOutlineVideoCamera />,
+            label: "Agendar Consulta",
+            icon: <AiOutlineCalendar />,
             to: "/",
             notification: 0,
         },

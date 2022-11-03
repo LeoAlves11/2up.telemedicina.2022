@@ -21,7 +21,7 @@ const NavbarMedico = () => {
         fetchDadosMedico();
     }, []);
 
-    const fetchDadosMedico = () => {
+    async function fetchDadosMedico() {
         setLoading(true);
         http.post('/medicos/get-medico').then((response) => {
             setDadosMedico(response.data);

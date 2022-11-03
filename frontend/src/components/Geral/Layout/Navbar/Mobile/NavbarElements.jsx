@@ -12,7 +12,7 @@ export const NavbarElements = [
         action: ''
     },
     {
-        titulo: 'Agendar',
+        titulo: 'Agenda',
         link: '/agendar',
         icon: <IoIcons.IoMdCalendar/>,
         cName: 'nav-text',

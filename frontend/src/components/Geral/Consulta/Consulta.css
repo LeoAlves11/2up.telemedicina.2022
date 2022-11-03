@@ -9,14 +9,32 @@
     padding: 3px 5px 0px 5px;
 }
 
+.col-videos{
+    background: #ffffff;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0 10px 30px 10px;
+    border: 1px solid #32cdc4;
+    border-radius: 19px;
+}
+
+.col-video-usuario{
+    width: 10%;
+}
+
+.col-videos p{
+    font-size: 30px;
+    font-weight: 600;
+}
+
 .meu_video{
-    width: 130px;
-    position: absolute;
+    width: 100%;
+    /* position: absolute;
     left: 10px;
     bottom: 10px;
     border: 4px solid #32cdc4; 
     border-radius: 10px;
-    z-index: 2;
+    z-index: 2; */
 }
 
 .video_usuario{

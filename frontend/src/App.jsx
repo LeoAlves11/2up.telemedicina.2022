@@ -1,20 +1,20 @@
-import { useState, useEffect } from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavbarPacientes from './components/Pacientes/Navbar/Navbar';
+// import NavbarPacientes from './components/Pacientes/Navbar/Navbar';
+import NavbarPacientes from './components/Geral/Layout/Navbar/Navbar';
 import NavbarMedicos from './components/Medicos/Navbar/Navbar';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Pacientes/Auth/Login/Login';
 import LoginMedicos from './pages/Medicos/Auth/Login/LoginMedico';
 import Registrar from './pages/Pacientes/Auth/Registro/Registrar';
-import Landing from './pages/Pacientes/Auth/Login/Landing';
 import AuthPaciente from './services/AuthPaciente';
 import AuthMedicos from './services/AuthMedicos';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
 
-  const versao_app = "v0.2.1";
+  const versao_app = "v0.2.2"; // Versão atual do APP (alterar ao fazer um commit no git)
+  const nome_app = 'Televet'; // Nome atual do App
 
   const {getToken} = AuthPaciente();
 
@@ -41,14 +41,14 @@ function App() {
     return (
     
       <>
-        <NavbarPacientes />
+        <NavbarPacientes nome_app={nome_app}/>
       </>
     );
   }else if(getTokenMedico()){
     return (
     
       <>
-        <NavbarMedicos />
+        <NavbarMedicos nome_app={nome_app}/>
       </>
     );
   }

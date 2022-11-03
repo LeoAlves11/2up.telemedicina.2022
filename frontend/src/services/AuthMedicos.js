@@ -7,25 +7,25 @@ function AuthMedico() {
     const navigate = useNavigate();
 
     const getTokenMedico = () => {
-        const tokenString = sessionStorage.getItem("token-medico");
+        const tokenString = localStorage.getItem("token-medico");
         const tokenMedico = JSON.parse(tokenString);
 
         return tokenMedico;
     }
 
     const getMedico = () => {
-        const medicoString = sessionStorage.getItem("medico");
+        const medicoString = localStorage.getItem("medico");
         const dados_medico = JSON.parse(medicoString);
 
         return dados_medico;
     }
 
-    const [token, setTokenMedico]             = useState(getTokenMedico());
-    const [medico, setMedico]           = useState(getMedico());
+    const [token, setTokenMedico]               = useState(getTokenMedico());
+    const [medico, setMedico]                   = useState(getMedico());
 
     const salvarToken = (medico, token) => {
-        sessionStorage.setItem("token-medico", JSON.stringify(token));
-        sessionStorage.setItem("medico", JSON.stringify(medico));
+        localStorage.setItem("token-medico", JSON.stringify(token));
+        localStorage.setItem("medico", JSON.stringify(medico));
 
         setTokenMedico(token);
         setMedico(medico);
@@ -33,7 +33,7 @@ function AuthMedico() {
     }
 
     const logout = () => {
-        sessionStorage.clear();
+        localStorage.clear();
         navigate('/medicos/login');
     }
 

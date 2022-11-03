@@ -4,12 +4,13 @@
     src: local('Bariol'), url('./assets/fonts/bariol_regular.ttf') format('truetype');
 }
 
-*{
+*, *::before, *::after{
     box-sizing: border-box;
     font-family: 'Bariol', serif;
     margin: 0;
     padding: 0;
 }
+
 
 .divLoadingSpinner{
     text-align: center;

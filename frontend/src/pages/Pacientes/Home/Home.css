@@ -26,3 +26,21 @@
 .divIcone{
     text-align: right;
 }
+
+.icon-card{
+    margin: -25px auto 0 auto;
+    padding: 5px 10px;
+    font-size: 25px;
+    border-radius: 38px;
+}
+
+.icon-card svg{
+    position: relative;
+    top: -2px;
+    bottom: 0;
+}
+
+.cardsHome{
+    background: #fff;
+    border: none;
+}

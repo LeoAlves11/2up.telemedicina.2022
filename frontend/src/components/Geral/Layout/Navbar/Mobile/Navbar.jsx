@@ -3,13 +3,13 @@ import './Navbar.css';
 // import './NavbarAlt.css';
 import { NavbarElements } from './NavbarElements';
 import { Link, Routes, Route, } from 'react-router-dom';
-import Home from '../../../pages/Pacientes/Home/';
-import Perfil from '../../../pages/Pacientes/Perfil';
-import AuthPaciente from '../../../services/AuthPaciente';
-import Loading from '../../Geral/Loading';
-import Consultas from '../../Geral/Consulta/Consultar';
-import Sala from '../../Geral/Consulta/Sala';
-import NotFound from '../../Geral/PaginaNotFound/NotFound';
+import Home from '../../../../../pages/Pacientes/Home';
+import Perfil from '../../../../../pages/Pacientes/Perfil';
+import AuthPaciente from '../../../../../services/AuthPaciente';
+import Loading from '../../../../Geral/Loading';
+import Consultas from '../../../../Geral/Consulta/Consultar';
+import Sala from '../../../../Geral/Consulta/Sala';
+import NotFound from '../../../../Geral/PaginaNotFound/NotFound';
 
 const Navbar = () => {
 
@@ -23,7 +23,7 @@ const Navbar = () => {
         fetchDadosPaciente();
     }, []);
 
-    const fetchDadosPaciente = () => {
+    async function fetchDadosPaciente() {
         setLoading(true);
         http.post('/paciente/get-paciente').then((response) => {
             setDadosPaciente(response.data);

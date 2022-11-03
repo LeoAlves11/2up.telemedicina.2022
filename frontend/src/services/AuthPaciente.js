@@ -7,14 +7,14 @@ function AuthPaciente() {
     const navigate = useNavigate();
 
     const getToken = () => {
-        const tokenString = sessionStorage.getItem("token");
+        const tokenString = localStorage.getItem("token");
         const tokenPaciente = JSON.parse(tokenString);
 
         return tokenPaciente;
     }
 
     const getPaciente = () => {
-        const pacienteString = sessionStorage.getItem("paciente");
+        const pacienteString = localStorage.getItem("paciente");
         const dados_paciente = JSON.parse(pacienteString);
 
         return dados_paciente;
@@ -24,8 +24,8 @@ function AuthPaciente() {
     const [paciente, setPaciente]       = useState(getPaciente());
 
     const salvarToken = (paciente, token) => {
-        sessionStorage.setItem("token", JSON.stringify(token));
-        sessionStorage.setItem("paciente", JSON.stringify(paciente));
+        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("paciente", JSON.stringify(paciente));
 
         setToken(token);
         setPaciente(paciente);
@@ -33,7 +33,7 @@ function AuthPaciente() {
     }
 
     const logout = () => {
-        sessionStorage.clear();
+        localStorage.clear();
         navigate('/login');
     }
 

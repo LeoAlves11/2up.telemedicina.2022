@@ -1,16 +1,36 @@
+## Changelog
+--------------------------------------------------------------------------------------------------------------------
+
 ## v0.2.2
 
 / ############### Adicionado ############### /
 
-- 
+- Nova navbar para Desktop
+- Adicionado usuários Gestores
+- Novas Páginas (Estilo novo v0.2.2)
+- Adicionado React Styled Components 
+- Adicionado novos estilos globais ( functional component - GlobalStyle )
+- Adicionado React Helmet ( funções Header/Head para React (Meta Description, Titulo, Links Canonicos) )
+- Adicionado Model de Médicos
+- Adicionado Model de Especialidades
+- Adicionado Migration de Medicos
+- Adicionado Migration de Especialidades
+- Adicionado Migration para controle de nivel de conta
+- Adicionado Sidebar
+- Adicionado Rotas de Pacientes
+- Adicionado novo logo televet
 
 / ############### Correção de Bugs / Alterações ############### /
 
 - Changelog alterado para Readme na pasta raiz (retirado do frontend)
+- Adicionado funções assíncronas para fetch de usuários e medicos
+- Navbar mobile separado e desativado
+- Alterado o cache de session para local Storage
 
 / ############### Removido ############### /
 
-- 
+- Changelog.md
+- Removido Migration de CRM / CRN na tabela de usuários
 
 ## v0.2.1
 

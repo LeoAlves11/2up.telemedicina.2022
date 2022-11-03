@@ -1,3 +1,9 @@
+@media (max-width: 768px){
+    .navbar{
+        display: block;
+    }
+}
+
 .navbar{
     background-color: #fff;
     width: 100%;

@@ -9,8 +9,18 @@ const VideoPlayer = () => {
   return (
     <div className='row col-videos'>
       <div className="col-12">
+        {/* Video Usuario 1 */}
+        <div className="col-12 mr-auto mt-2">
+          <video 
+            playsInline
+            muted
+            ref={myVideo}
+            autoPlay
+            className='meu_video'
+          />
+        </div>
         {callAccepted && !callEnded && (
-          <div className="col-12 mx-auto mt-3">
+          <div className="col-4 mx-auto mt-3">
             <video 
                 playsInline
                 ref={userVideo}
@@ -20,16 +30,7 @@ const VideoPlayer = () => {
           </div>
         )}
 
-        {/* Video Usuario 1 */}
-        <div className="col-4 mr-auto mt-2">
-          <video 
-            playsInline
-            muted
-            ref={myVideo}
-            autoPlay
-            className='meu_video'
-          />
-        </div>
+        
         {/* Video Usuario 2 */}
         
       </div>

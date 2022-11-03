@@ -80,19 +80,16 @@ const ContextProvider = ( { children } ) => {
 
     const leaveCall = () => {
 
-        socket.on("callended", () =>{
+        setCallEnded(true);
+        setCallAccepted(false);
 
-            setCallEnded(true);
-            setCallAccepted(false);
-
-            console.log(callEnded);
-            
-            connectionRef.current.destroy();
-            
-            navigate('/');
-            
-            window.location.reload();
-        });
+        console.log(callEnded);
+        
+        connectionRef.current.destroy();
+        
+        navigate('/');
+        
+        window.location.reload();
 
     }
 

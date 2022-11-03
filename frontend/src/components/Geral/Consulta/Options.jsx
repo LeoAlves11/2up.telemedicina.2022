@@ -25,7 +25,7 @@ const Options = ({ children }) => {
             <form>
               {callAccepted && !callEnded ? (
                 <>
-                  <a href="#" onClick={handleShow}>Finalizar chamada</a>
+                  <a href="#" onClick={handleShow}>Sair da chamada</a>
                   <Modal show={show} onHide={handleClose} centered>
                     <Modal.Body>Tem certeza que deseja desligar a ligação?</Modal.Body>
                     <Modal.Footer>
